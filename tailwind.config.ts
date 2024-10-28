@@ -37,6 +37,9 @@ const config: Config = {
         "17": "17",
         "18": "18"
       },
+      fontSize: {
+        xxs: '0.625rem',
+      },
     },
   },
   plugins: [],
