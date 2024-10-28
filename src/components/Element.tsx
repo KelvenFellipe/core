@@ -1,31 +1,26 @@
 "use client"
-import { useState } from "react"
 import { colors } from "./colors"
 import { elementsProps } from "./elements"
 
 interface props {
   data: elementsProps
-  className?: string
 }
-export function Element({ data, className }: props) {
-  const [hover, setHover] = useState(false)
-
+export function Element({ data }: props) {
   return (
     <div
-      className={`relative aspect-square w-[92px] rounded-md font-bold grid grid-cols-1 text-center p-1 
-        ease-in-out duration-300 select-none border-black ${colors(data.material)} ${className} ${
-        hover && "scale-125 z-40 shadow-2xl shadow-black border "
-      }`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      className={`relative group aspect-square w-[76px] rounded-md grid grid-cols-1 text-center p-1 ease-in-out duration-300 select-none
+         border border-black hover:scale-125 hover:z-10 hover:shadow-2xl hover:shadow-black ${colors(
+           data.material
+         )}`}
       key={data.atomic}
     >
-      <div className="text-xs flex justify-between ">
+      <div className="text-xxs flex justify-between ">
         <p>{data.atomic}</p>
-        <p className={`${hover ? "" : "hidden"}`}>{data.mass}</p>
+        <p className={`hidden group-hover:flex `}>{data.mass.slice(0, 6)}</p>
       </div>
-      <p className="text-4xl">{data.abv}</p>
-      <p className="text-sm scale-75">{data.name}</p>
+
+      <p className="text-3xl font-bold">{data.abv}</p>
+      <p className="text-xxs">{data.name}</p>
     </div>
   )
 }
