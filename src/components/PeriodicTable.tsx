@@ -1,5 +1,5 @@
 import { Element } from "./Element"
-import { elementsData } from "./elements"
+import { elementsData } from "./elementsData"
 
 export function PeriodicTable() {
   return (

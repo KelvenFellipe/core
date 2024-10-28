@@ -1,6 +1,6 @@
 "use client"
 import { colors } from "./colors"
-import { elementsProps } from "./elements"
+import { elementsProps } from "./elementsData"
 
 interface props {
   data: elementsProps
